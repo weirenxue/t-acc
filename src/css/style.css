@@ -1,0 +1,34 @@
+@keyframes animateLeft {
+    from {left: -200px;}
+    to {left: 0px;}
+}
+@keyframes animateMarginLeft {
+    from {margin-left: 0;}
+    to {margin-left: 200px;}
+}
+
+:root {
+    --sideNav-width: 200px;
+}
+.sideNav {
+    display: flex;
+    flex-direction: column;
+    width: var(--sideNav-width);
+    margin-left: calc(-1 * var(--sideNav-width));
+    height: 100vh;
+    transition: margin .4s;
+    position: fixed;
+    background-color: #343a40!important;
+}
+
+.sideNav.is-sideNav-open {
+    margin-left: 0;
+}
+
+.topNav {
+    margin-left: 0px;
+    transition: margin .4s
+}
+.topNav.is-sideNav-open {
+    margin-left: var(--sideNav-width)
+}
